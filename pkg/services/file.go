@@ -617,7 +617,7 @@ func (fs *FileService) CopyFile(c *gin.Context) (*schemas.FileOut, *types.AppErr
 			media := item.Media.(*tg.MessageMediaDocument)
 			document := media.Document.(*tg.Document)
 
-			caption := fmt.Sprintf("%s_%s", res[0].id, res[0].Name)
+			caption := fmt.Sprintf("%s_%s", res[0].Id, res[0].Name)
 
 			id, _ := randInt64()
 			request := tg.MessagesSendMediaRequest{
