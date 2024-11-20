@@ -36,7 +36,7 @@ archives:
       - LICENSE
 dockers:
   - image_templates:
-      - "ghcr.io/tgdrive/{{ .ProjectName }}:{{ .Tag }}-amd64"
+      - "ghcr.io/sudoshell/{{ .ProjectName }}:{{ .Tag }}-amd64"
     use: buildx
     dockerfile: goreleaser.dockerfile
     build_flag_templates:
