@@ -617,12 +617,15 @@ func (fs *FileService) CopyFile(c *gin.Context) (*schemas.FileOut, *types.AppErr
 			media := item.Media.(*tg.MessageMediaDocument)
 			document := media.Document.(*tg.Document)
 
+			caption := fmt.Sprintf("%s_%s", res[0].id, res[0].Name)
+
 			id, _ := randInt64()
 			request := tg.MessagesSendMediaRequest{
 				Silent:   true,
 				Peer:     &tg.InputPeerChannel{ChannelID: channel.ChannelID, AccessHash: channel.AccessHash},
 				Media:    &tg.InputMediaDocument{ID: document.AsInput()},
 				RandomID: id,
+				Message:  caption,
 			}
 			res, err := client.API().MessagesSendMedia(c, &request)
 
