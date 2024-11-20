@@ -19,8 +19,8 @@ builds:
       - windows
       - darwin
     goarch:
-      - amd64
-      - arm
+      # - amd64
+      # - arm
       - arm64
 
 checksum:
@@ -56,7 +56,7 @@ docker_manifests:
     image_templates:
       - "ghcr.io/sudoshell/{{ .ProjectName }}:{{ .Tag }}-amd64"
       - "ghcr.io/sudoshell/{{ .ProjectName }}:{{ .Tag }}-arm64"
-  - name_template: "ghcr.io/v/{{ .ProjectName }}:latest"
+  - name_template: "ghcr.io/sudoshell/{{ .ProjectName }}:latest"
     image_templates:
       - "ghcr.io/sudoshell/{{ .ProjectName }}:{{ .Tag }}-amd64"
       - "ghcr.io/sudoshell/{{ .ProjectName }}:{{ .Tag }}-arm64"
