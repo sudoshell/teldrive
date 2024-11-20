@@ -43,8 +43,8 @@ dockers:
     - "--platform=linux/amd64"
 
   - image_templates:
-      - "ghcr.io/tgdrive/{{ .ProjectName }}:{{ .Tag }}-arm64"
-      - "ghcr.io/tgdrive/{{ .ProjectName }}:latest"
+      - "ghcr.io/sudoshell/{{ .ProjectName }}:{{ .Tag }}-arm64"
+      - "ghcr.io/sudoshell/{{ .ProjectName }}:latest"
     use: buildx
     dockerfile: goreleaser.dockerfile
     goarch: arm64
@@ -52,14 +52,14 @@ dockers:
     - --platform=linux/arm64/v8
 
 docker_manifests:
-  - name_template: "ghcr.io/tgdrive/{{ .ProjectName }}:{{ .Tag }}"
+  - name_template: "ghcr.io/sudoshell/{{ .ProjectName }}:{{ .Tag }}"
     image_templates:
-      - "ghcr.io/tgdrive/{{ .ProjectName }}:{{ .Tag }}-amd64"
-      - "ghcr.io/tgdrive/{{ .ProjectName }}:{{ .Tag }}-arm64"
-  - name_template: "ghcr.io/tgdrive/{{ .ProjectName }}:latest"
+      - "ghcr.io/sudoshell/{{ .ProjectName }}:{{ .Tag }}-amd64"
+      - "ghcr.io/sudoshell/{{ .ProjectName }}:{{ .Tag }}-arm64"
+  - name_template: "ghcr.io/v/{{ .ProjectName }}:latest"
     image_templates:
-      - "ghcr.io/tgdrive/{{ .ProjectName }}:{{ .Tag }}-amd64"
-      - "ghcr.io/tgdrive/{{ .ProjectName }}:{{ .Tag }}-arm64"
+      - "ghcr.io/sudoshell/{{ .ProjectName }}:{{ .Tag }}-amd64"
+      - "ghcr.io/sudoshell/{{ .ProjectName }}:{{ .Tag }}-arm64"
 
 changelog:
   sort: asc
